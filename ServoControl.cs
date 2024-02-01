@@ -4,14 +4,14 @@ using System.IO.Ports;
 
 namespace ArduinoWF
 {
-    public partial class Form1 : Form
+    public partial class ServoControl : Form
     {
 
         bool isConnected = false;
         bool isAutomated = false;
         String[] ports;
         SerialPort port;
-        public Form1()
+        public ServoControl()
         {
             InitializeComponent();
             disableControls();
@@ -140,6 +140,22 @@ namespace ArduinoWF
                
             }
         }
+        private void laser_CheckedChanged(object sender, EventArgs e)
+        {
+            if (isConnected)
+            {
+                if (laser.Checked)
+                {
+                    string sentText = "Z";
+                    port.Write(sentText);
+                } else if (!laser.Checked)
+                {
+                    string sentText = "S";
+                    port.Write(sentText);
+                }
+
+            }
+        }
 
         private void disableServoControl()
         {
@@ -160,54 +176,70 @@ namespace ArduinoWF
         // control
         private void upbutton_Click(object sender, EventArgs e)
         {
-            try
+            if (isConnected)
             {
-                string sentText = "U";
-                Console.WriteLine("Sent up instruction: " + sentText);
-                port.Write(sentText);
-            } catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+                try
+                {
+                    string sentText = "U";
+                    Console.WriteLine("Sent up instruction: " + sentText);
+                    port.Write(sentText);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
 
             }
+        }
 
         private void downbutton_Click(object sender, EventArgs e)
         {
-            try
+            if (isConnected)
             {
-                string sentText = "D";
-                Console.WriteLine("Sent down instruction: " + sentText);
-                port.Write(sentText);
-            } catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                try
+                {
+                    string sentText = "D";
+                    Console.WriteLine("Sent down instruction: " + sentText);
+                    port.Write(sentText);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
         private void rightbutton_Click(object sender, EventArgs e)
         {
-            try
+            if (isConnected)
             {
-                string sentText = "R";
-                Console.WriteLine("Sent right instruction: " + sentText);
-                port.Write(sentText);
-            } catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                try
+                {
+                    string sentText = "R";
+                    Console.WriteLine("Sent right instruction: " + sentText);
+                    port.Write(sentText);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
         private void leftbutton_Click(object sender, EventArgs e)
         {
-            try
+            if (isConnected)
             {
-                string sentText = "L";
-                Console.WriteLine("Sent left instruction: " + sentText);
-                port.Write(sentText);
-            } catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                try
+                {
+                    string sentText = "L";
+                    Console.WriteLine("Sent left instruction: " + sentText);
+                    port.Write(sentText);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
@@ -217,6 +249,6 @@ namespace ArduinoWF
 
         }
 
-       
+
     }
 }

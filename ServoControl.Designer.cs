@@ -1,6 +1,6 @@
 ﻿namespace ArduinoWF
 {
-    partial class Form1
+    partial class ServoControl
     {
         /// <summary>
         /// Required designer variable.
@@ -41,6 +41,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.laser = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // button1
@@ -167,11 +168,23 @@
             this.label4.TabIndex = 12;
             this.label4.Text = "Servo Movement Control";
             // 
-            // Form1
+            // laser
+            // 
+            this.laser.AutoSize = true;
+            this.laser.Location = new System.Drawing.Point(130, 39);
+            this.laser.Name = "laser";
+            this.laser.Size = new System.Drawing.Size(52, 17);
+            this.laser.TabIndex = 13;
+            this.laser.Text = "Laser";
+            this.laser.UseVisualStyleBackColor = true;
+            this.laser.CheckedChanged += new System.EventHandler(this.laser_CheckedChanged);
+            // 
+            // ServoControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(389, 293);
+            this.Controls.Add(this.laser);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -185,7 +198,7 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
-            this.Name = "Form1";
+            this.Name = "ServoControl";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -208,6 +221,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox laser;
     }
 }
 
