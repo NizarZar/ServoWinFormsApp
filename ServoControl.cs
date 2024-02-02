@@ -79,8 +79,10 @@ namespace ArduinoWF
             {
                 // port.Write("#STOP\n");
                 port.Write("2");
+                port.Write("S");
                 port.Write("");
                 checkBox1.Checked = false;
+                laser.Checked = false;
                 connectbutton.Text = "Connect";
                 isConnected = false;
                 disableControls();
@@ -107,6 +109,7 @@ namespace ArduinoWF
             button1.Enabled = false;
             textBox1.Enabled = false;
             checkBox1.Enabled = true;
+            laser.Enabled = true;
         }
 
         private void disableControls()
@@ -114,6 +117,7 @@ namespace ArduinoWF
             button1.Enabled = false;
             textBox1.Enabled = false;
             checkBox1.Enabled = false;
+            laser.Enabled = false;
             textBox1.Text = "";
         }
         // automated servo movement checkbox
