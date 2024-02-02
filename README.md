@@ -7,3 +7,6 @@
 - You can manually control the servo movement (Right, Left, Up, Down)
 
 I am planning to add new functionalities to the app when I add more components with my servo (such as a camera) and switching to WiFi.
+
+![image](https://github.com/NizarZar/ServoWinFormsApp/assets/97471905/7c3b5ec9-76de-4b42-9ffe-693e34c2cf20)
+![image](https://github.com/NizarZar/ServoWinFormsApp/assets/97471905/cd114499-6325-4011-9faf-daf3dc1c3fbb)
